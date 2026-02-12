@@ -13,6 +13,6 @@ if [ $number -ge $1 ]; then
     echo "Your number is greater than the required number"
 
 else
-    echo "Your number is less than the required number"
+    echo "Enter number more than $1"
 
 fi
