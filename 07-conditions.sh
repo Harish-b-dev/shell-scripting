@@ -12,6 +12,9 @@ number=25
 if [ $number -ge $1 ]; then
     echo "Your number is less than the required number"
 
+elif [ $number -eq $1 ]; then
+    echo "Your number is equal to the required number"
+
 else
     echo "Enter number more than $number"
 
