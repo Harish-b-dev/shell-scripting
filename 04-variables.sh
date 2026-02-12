@@ -10,5 +10,7 @@ sleep 10 &
 
 end_time=$(((date +%s) - $start_time))
 
-echo "script completed at $end_time"
+timefull=$(($end_time - $start_time))
+
+echo "script completed at $timefull"
 
