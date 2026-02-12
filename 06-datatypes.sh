@@ -19,5 +19,5 @@ echo "Total is $total"
 #array
 fruits=("apple" "banana" "orange" "pineapple")
 
-echo "$fruits[@]"
-echo "$fruits[:-2]"
+echo "${fruits[@]}"
+echo "${len(fruits)}"
