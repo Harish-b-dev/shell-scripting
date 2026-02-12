@@ -14,3 +14,5 @@ if [ $number -ge $1 ]; then
 
 else
     echo "Your number is less than the required number"
+
+fi
