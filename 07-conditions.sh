@@ -9,7 +9,7 @@ number=25
 # -ge or >= -- for greater than or equal to
 # -le or <= -- for less than or equal to
 
-if [ $number -ge $1 ]; then
+if [ $number -gt $1 ]; then
     echo "Your number is less than the required number"
 
 elif [ $number -eq $1 ]; then
