@@ -4,3 +4,5 @@
 echo 'hello world!'
 
 echo 'learning shell'
+
+echo 'practicing shell'
