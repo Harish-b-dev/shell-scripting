@@ -20,6 +20,7 @@ echo "Present working directory $PWD"
 echo "Who is running the sctript $USER"
 echo "Home directory of the user $HOME"
 echo "PID of the script $$"
-echo "Background process of the script $!"
+sleep 10 &
+echo "Background process of the id $!"
 echo "Variables passed in command $*"
 echo "exit status of the previous command $?"
