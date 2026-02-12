@@ -10,9 +10,9 @@ number=25
 # -le or <= -- for less than or equal to
 
 if [ $number -ge $1 ]; then
-    echo "Your number is greater than the required number"
+    echo "Your number is less than the required number"
 
 else
-    echo "Enter number more than $1"
+    echo "Enter number more than $number"
 
 fi
