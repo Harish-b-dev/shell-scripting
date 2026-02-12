@@ -14,3 +14,10 @@ num2=harish
 total=$(($num1+$num2))
 
 echo "Total is $total"
+
+
+#array
+fruits=("apple" "banana" "orange" "pineapple")
+
+echo "$fruits"
+echo "len($fruits)"
