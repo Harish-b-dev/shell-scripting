@@ -8,7 +8,7 @@ echo "script executed at $start_time"
 
 sleep 10 &
 
-end_time=$(date +%s - $start_time)
+end_time=$(((date +%s) - $start_time))
 
 echo "script completed at $end_time"
 
