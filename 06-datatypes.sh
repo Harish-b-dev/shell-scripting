@@ -20,4 +20,4 @@ echo "Total is $total"
 fruits=("apple" "banana" "orange" "pineapple")
 
 echo "${fruits[@]}"
-echo "${len(fruits)}"
+echo "${fruits[:-2]}"
