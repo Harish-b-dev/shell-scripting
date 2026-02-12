@@ -1,10 +1,14 @@
 #!/bin/shell
 
-start_time=$(date)
+start_time=$(date+%S)
+
+start_timefull=$(date+%s)
 
 echo "script executed at $start_time"
 
-system_sleep=$(sleep 10 &)
+sleep 10 &
 
-echo "system will sleep for $system_sleep"
+end_time=$($start_timefull - date+%s)
+
+echo "script completed at $end_time"
 
