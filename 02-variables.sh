@@ -1,4 +1,4 @@
-#!/bash/shell
+#!/bin/shell
 
 person1=$1
 person2=$2
