@@ -14,7 +14,7 @@ else
     
     else
         echo "Installing nginx... Failure"
-        exit 1
+        #exit 1
         echo "Hi exit code $?"
     fi
     
