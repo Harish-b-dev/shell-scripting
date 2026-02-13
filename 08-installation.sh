@@ -16,7 +16,15 @@ else
         echo "Installing nginx... Failure"
         exit 1
     
-    fi
+    
+fi
+
+if [ $? -ne 0 ]; then
+    echo "Your script is not working correctly, please review once."
+    exit 1
+else
+    echo "Your script is success."
+
 fi
 
 #dnf install nginx -y
