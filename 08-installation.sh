@@ -7,7 +7,7 @@ if [ $user_code -ne 0 ]; then
     #exit 1 -- It stops getting system error.
 else
     echo "Installing nginx..."
-    dnf install nginx -y
+    dnf install nginxxx -y
 
     if [ $? -eq 0 ]; then
         echo "Installing nginx... Success"
@@ -15,7 +15,7 @@ else
     else
         echo "Installing nginx... Failure"
         exit 1
-    fi
+    
     
 fi
 
