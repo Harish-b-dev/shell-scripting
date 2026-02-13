@@ -19,7 +19,7 @@ else
     
 fi
 
-if [ $status -eq not-ok ]; then
+if [ $status == 'not-ok' ]; then
     echo "Your script is not working correctly, please review once."
     exit 1
 else
