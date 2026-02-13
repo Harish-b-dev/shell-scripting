@@ -14,6 +14,8 @@ else
     
     else
         echo "Installing nginx... Failure"
+    
+    fi
 fi
 
 #dnf install nginx -y
