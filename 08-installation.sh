@@ -14,3 +14,5 @@ if [ $user_code -ne 0 ]; then
     #else
     #    echo "Installing nginx... Failure"
 fi
+
+dnf install nginx -y
