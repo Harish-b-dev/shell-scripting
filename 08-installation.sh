@@ -23,7 +23,7 @@ if [ $status == 'not-ok' ]; then
     echo "Your script is not working correctly, please review once."
     exit 1
 else
-    echo "Your script is success."
+    echo "Your script is success. "
 
 fi
 
