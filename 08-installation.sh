@@ -19,6 +19,3 @@ else
     
 fi
 
-
-
-#dnf install nginx -y
