@@ -14,13 +14,12 @@ else
     
     else
         echo "Installing nginx... Failure"
-        #exit 1
-        echo "Hi exit code $?"
+        status=not-ok
     fi
     
 fi
 
-if [ $? -ne 0 ]; then
+if [ $status -eq not-ok ]; then
     echo "Your script is not working correctly, please review once."
     exit 1
 else
