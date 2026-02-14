@@ -9,7 +9,7 @@ echo "command passed ... $command_type"
 
 mkdir -p $logs_folder
 
-if [ $command_type -eq "install" ]; then
+if [ $command_type == "install" ]; then
     if [ $user -ne 0 ]; then 
         echo "You need sudo access to install packages." | tee -a $log_file
         exit 1
