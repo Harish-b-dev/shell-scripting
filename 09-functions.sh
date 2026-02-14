@@ -8,32 +8,21 @@ if [ $user -ne 0 ]; then
 
 fi
 
+
+install_fun(){
+    dnf install $1 -y
+
+    if [ $? -ne 0 ]; then
+        echo "$1  installation ... failure"
+        exit 1
+
+    else
+        echo "$1 installation ... success"
+    fi
+}
+
 dnf install nginx -y
-
-if [ $? -ne 0 ]; then
-    echo "nginx installlation ... failure"
-    exit 1
-
-else
-    echo "nginx installation ... success"
-fi
-
 
 dnf install mysqlhcf -y
 
-if [ $? -ne 0 ]; then
-    echo "mysql installlation ... failure"
-    exit 1
-else
-    echo "mysql installation ... success"
-fi
-
-
 dnf install nodejs -y
-
-if [ $? -ne 0 ]; then
-    echo "nodejs installlation ... failure"
-    exit 1
-else
-    echo "nodejs installation ... success"
-fi
