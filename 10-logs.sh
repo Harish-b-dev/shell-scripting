@@ -3,11 +3,11 @@
 user=$(id -u)
 logs_folder="/var/log/shell-practise"
 log_file="/var/log/shell-practise/$0.log"
-command=$1
+command_type=$1
 
 mkdir -p $logs_folder
 
-if [ $command -eq "install" ]; then
+if [ $command_type -eq "install" ]; then
     if [ $user -ne 0 ]; then 
         echo "You need sudo access to install packages." | tee -a $log_file
         exit 1
@@ -36,7 +36,7 @@ if [ $command -eq "install" ]; then
 
 
 
-elif [ $command -eq "remove" ]; then
+elif [ $command_type -eq "remove" ]; then
     if [ $user -ne 0 ]; then
         echo "You need sudo access to install packages." | tee -a $log_file
         exit 1
@@ -62,4 +62,6 @@ elif [ $command -eq "remove" ]; then
 
     install_fun nodejs
 
+else
+    echo "Please pass install or remove command." 
 fi
