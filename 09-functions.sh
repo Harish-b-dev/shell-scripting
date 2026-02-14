@@ -23,6 +23,6 @@ install_fun(){
 
 install_fun nginx
 
-install_fun mysqlhcf
+install_fun mysql
 
 install_fun nodejs
