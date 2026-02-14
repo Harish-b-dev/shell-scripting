@@ -21,8 +21,4 @@ install_fun(){
     fi
 }
 
-dnf install nginx -y
-
-dnf install mysqlhcf -y
-
-dnf install nodejs -y
+install_fun nginx mysqlhcf nodejs
