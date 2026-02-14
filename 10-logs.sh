@@ -45,14 +45,14 @@ elif [ $command_type -eq "remove" ]; then
 
 
     install_fun(){
-        dnf install $1 -y &>> $log_file
+        dnf install $2 -y &>> $log_file
 
         if [ $? -ne 0 ]; then
-            echo "$1  installation ... failure" | tee -a $log_file
+            echo "$2  installation ... failure" | tee -a $log_file
             exit 1
 
         else
-            echo "$1 installation ... success" | tee -a $log_file
+            echo "$2 installation ... success" | tee -a $log_file
         fi
     }
 
