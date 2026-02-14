@@ -3,10 +3,11 @@
 user=$(id -u)
 logs_folder="/var/log/shell-practise"
 log_file="/var/log/shell-practise/$0.log"
+command=$1
 
 mkdir -p $logs_folder
 
-if [ $1 -eq "install" ]; then
+if [ $command -eq "install" ]; then
     if [ $user -ne 0 ]; then 
         echo "You need sudo access to install packages." | tee -a $log_file
         exit 1
@@ -35,7 +36,7 @@ if [ $1 -eq "install" ]; then
 
 
 
-elif [ $1 -eq "remove" ]; then
+elif [ $command -eq "remove" ]; then
     if [ $user -ne 0 ]; then
         echo "You need sudo access to install packages." | tee -a $log_file
         exit 1
