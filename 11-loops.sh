@@ -8,7 +8,7 @@ b=100
 #    echo $i
 #done
 
-for i in $(seq $a..$b)
+for i in $(eval echo {$a..$b})
 do
     echo $i
 done
