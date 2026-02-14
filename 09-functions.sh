@@ -21,18 +21,18 @@ fi
 dnf install mysql -y
 
 if [ $? -ne 0 ]:
-    echo "nginx installlation ... failure"
+    echo "mysql installlation ... failure"
 
 else
-    echo "nginx installation ... success"
+    echo "mysql installation ... success"
 fi
 
 
 dnf install nodejs -y
 
 if [ $? -ne 0 ]:
-    echo "nginx installlation ... failure"
+    echo "nodejs installlation ... failure"
 
 else
-    echo "nginx installation ... success"
+    echo "nodejs installation ... success"
 fi
