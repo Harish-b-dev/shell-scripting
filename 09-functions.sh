@@ -9,15 +9,15 @@ if [ $user -ne 0 ]; then
 fi
 
 
-install_fun(a){
-    dnf install $a -y
+install_fun(){
+    dnf install $1 -y
 
     if [ $? -ne 0 ]; then
-        echo "$a  installation ... failure"
+        echo "$1  installation ... failure"
         exit 1
 
     else
-        echo "$a installation ... success"
+        echo "$1 installation ... success"
     fi
 }
 
