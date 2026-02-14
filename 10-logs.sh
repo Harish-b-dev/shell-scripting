@@ -7,21 +7,21 @@ log_file="/var/log/shell-practise/$0.log"
 mkdir -p $logs_folder
 
 if [ $user -ne 0 ]; then 
-    echo "You need sudo access to install packages." &>> $log_file
+    echo "You need sudo access to install packages." | tee $log_file
     exit 1
 
 fi
 
 
 install_fun(){
-    dnf install $1 -y | tee $log_file
+    dnf install $1 -y &>> $log_file
 
     if [ $? -ne 0 ]; then
-        echo "$1  installation ... failure" &>> $log_file
+        echo "$1  installation ... failure" | tee $log_file
         exit 1
 
     else
-        echo "$1 installation ... success" &>> $log_file
+        echo "$1 installation ... success" | tee $log_file
     fi
 }
 
