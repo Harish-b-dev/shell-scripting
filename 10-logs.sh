@@ -14,7 +14,7 @@ fi
 
 
 install_fun(){
-    dnf install $1 -y &>> $log_file
+    dnf install $1 -y | tee $log_file
 
     if [ $? -ne 0 ]; then
         echo "$1  installation ... failure" &>> $log_file
