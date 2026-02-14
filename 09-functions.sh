@@ -19,7 +19,7 @@ else
 fi
 
 
-dnf install mysql -y
+dnf install mysqlhcf -y
 
 if [ $? -ne 0 ]; then
     echo "mysql installlation ... failure"
