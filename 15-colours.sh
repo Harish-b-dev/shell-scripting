@@ -17,7 +17,7 @@ sudo mkdir -p $logs_folder
 
 
 if [ $user -ne 0 ]; then 
-     echo -e  You need $Y sudo access $N to install packages." | tee -a $log_file
+     echo -e  "You need $Y sudo access $N to install packages." | tee -a $log_file
     exit 1
 
 fi
