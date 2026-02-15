@@ -31,7 +31,7 @@ install_fun(){
         exit 1
 
     else
-        echo "$G $1 installation ... success$N" | tee -a $log_file
+        echo -e "$G $1 installation ... success$N" | tee -a $log_file
     fi
 }
 
@@ -40,10 +40,10 @@ for package in $@ # passing packages nginx, mysql, nodejs
 do
     dnf list installed $package
     if [ $? -eq 0 ]; then
-        echo "$B $package is already installed$N"
+        echo -e "$B $package is already installed$N"
     else
         echo "installing ... $package"
         install_fun $package
-        echo "$G install ... $package $N is completed"
+        echo -e "$G install ... $package $N is completed"
     fi
 done
