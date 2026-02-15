@@ -7,7 +7,7 @@ command_type=$1
 
 echo "command passed ... $command_type"
 
-mkdir -p $logs_folder
+sudo mkdir -p $logs_folder
 
 
 if [ $user -ne 0 ]; then 
