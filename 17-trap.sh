@@ -2,7 +2,7 @@
 
 set -e
 
-trap 'echo "there is an error at $LINENO, command is $BASH_COMMAND"'
+trap 'echo "there is an error at $LINENO, command is $BASH_COMMAND"' ERR
 
 
 echo "Hello World"
