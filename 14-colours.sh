@@ -10,5 +10,5 @@ colours=($R $G $Y $B $N)
 
 for i in ${colours[@]}
 do
-    echo "$i hell world!$N,  I'm learning shell"
+    echo -e "$i hell world!$N,  I'm learning shell"
 done
