@@ -6,7 +6,9 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-for i in $@
+colours=($R $G $Y $B $N)
+
+for i in ${$colours[@]}
 do
-    echo "$i hell world!, $N I'm learning shell"
+    echo "$i hell world!$N,  I'm learning shell"
 done
