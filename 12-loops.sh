@@ -10,11 +10,11 @@ echo "command passed ... $command_type"
 mkdir -p $logs_folder
 
 
-    if [ $user -ne 0 ]; then 
-        echo "You need sudo access to install packages." | tee -a $log_file
-        exit 1
+if [ $user -ne 0 ]; then 
+     echo "You need sudo access to install packages." | tee -a $log_file
+    exit 1
 
-    fi
+fi
 
 
 install_fun(){
