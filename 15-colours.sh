@@ -11,13 +11,13 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-echo -e "$B command passed ... $command_type"
+echo -e " command passed ... $B $command_type $N"
 
 sudo mkdir -p $logs_folder
 
 
 if [ $user -ne 0 ]; then 
-     echo -e "$Y You need sudo access to install packages.$N" | tee -a $log_file
+     echo -e  You need $Y sudo access $N to install packages." | tee -a $log_file
     exit 1
 
 fi
@@ -27,11 +27,11 @@ install_fun(){
     dnf install $1 -y &>> $log_file
 
     if [ $? -ne 0 ]; then
-        echo -e "$R $1  installation ... failure $N" | tee -a $log_file
+        echo -e "$R $1 $N  installation ... failure " | tee -a $log_file
         exit 1
 
     else
-        echo -e "$G $1 installation ... success$N" | tee -a $log_file
+        echo -e "$G $1 $N installation ... success" | tee -a $log_file
     fi
 }
 
@@ -40,7 +40,7 @@ for package in $@ # passing packages nginx, mysql, nodejs
 do
     dnf list installed $package
     if [ $? -eq 0 ]; then
-        echo -e "$B $package is already installed$N"
+        echo -e "$B $package $N is already installed"
     else
         echo "installing ... $package"
         install_fun $package
