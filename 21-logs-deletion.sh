@@ -2,7 +2,7 @@
 
 start=1
 
-while [ $start le 6 ]
+while [ $start -le 6 ]
 do
     echo "$start"
 
