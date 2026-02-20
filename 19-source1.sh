@@ -5,6 +5,6 @@ COUNTRY=INDIA
 echo "I am in: $COUNTRY"
 echo "PID of SCRIPT-1: $$"
 
-#source ./20-source.sh
+source ./20-source.sh
 
-sh 20-source.sh
+#sh 20-source.sh
