@@ -15,4 +15,4 @@ while IFS= read -r line;
 do
     echo "$line"
 
-done < /home/ec2-user/app-log
+done < 01-variables.sh
