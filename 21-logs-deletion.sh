@@ -1,6 +1,7 @@
 #!/bin/shell
 
-start=0
+start=1
+
 while [ $start le 6 ]
 do
     echo "$start"
