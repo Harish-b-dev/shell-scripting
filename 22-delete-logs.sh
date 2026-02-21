@@ -5,7 +5,7 @@ G="\e[32m"
 B="\e[33m"
 Y="\e[34m"
 
-folder="/home/ec2-users"
+folder="/home/ec2-user"
 logs_folder="$folder/$0.log"
 
 sudo mkdir -p $logs_folder
