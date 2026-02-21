@@ -7,7 +7,7 @@ Y="\e[34m"
 
 folder="/home/ec2-user"
 logs_folder="$folder/deletions"
-log_file="$folder/$0.log"
+log_file="$logs_folder/$0.log"
 
 sudo mkdir -p $logs_folder
 
