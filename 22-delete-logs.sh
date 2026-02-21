@@ -12,7 +12,7 @@ sudo mkdir -p $logs_folder
 
 checking_folder="$folder/app"
 
-if [ !-d $checking_folder ]; then
+if [ ! -d $checking_folder ]; then
     echo -e "$Y Folder does not exist.$N"
     exit 1
 fi
