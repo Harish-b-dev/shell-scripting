@@ -20,7 +20,7 @@ fi
 
 logs_to_delete=find "$checking_folder" -type f -mtime +14
 
-echo "$logs_to_delete"
+ls -l "$logs_to_delete"
 
 #while IFS= read -r file;
 #do
