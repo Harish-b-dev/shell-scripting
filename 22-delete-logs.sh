@@ -6,11 +6,11 @@ B="\e[33m"
 Y="\e[34m"
 
 folder="/home/ec2-user"
-logs_folder="$folder/$0.log"
+logs_folder="$folder/$0.txt"
 
 sudo mkdir -p $logs_folder
 
-checking_folder="$folder/app"
+checking_folder="$folder/app/"
 
 if [ ! -d $checking_folder ]; then
     echo -e "$Y Folder does not exist.$N"
