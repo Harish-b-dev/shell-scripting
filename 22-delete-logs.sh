@@ -4,6 +4,7 @@ R="\e[31m"
 G="\e[32m"
 B="\e[33m"
 Y="\e[34m"
+N="\e[0m"
 
 folder="/home/ec2-user"
 logs_folder="$folder/deletions"
