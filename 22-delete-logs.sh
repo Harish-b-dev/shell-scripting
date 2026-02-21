@@ -6,9 +6,9 @@ B="\e[33m"
 Y="\e[34m"
 
 folder="/home/ec2-user"
-logs_folder="$folder/$0.txt"
+logs_folder="$folder/$0.log"
 
-sudo mkdir -p $logs_folder
+sudo touch -p $logs_folder
 
 checking_folder="$folder/app/"
 
@@ -19,8 +19,6 @@ fi
 
 cd $checking_folder
 logs_to_delete=find ./ -type f -mtime +14
-
-ls -l "$logs_to_delete"
 
 while IFS= read -r file;
 do
