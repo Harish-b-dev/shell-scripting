@@ -18,8 +18,7 @@ if [ ! -d $checking_folder ]; then
     exit 1
 fi
 
-cd $checking_folder
-logs_to_delete=find ./ -type f -mtime +14
+logs_to_delete=find "$checking_folder" -type f -mtime +14
 
 while IFS= read -r file;
 do
