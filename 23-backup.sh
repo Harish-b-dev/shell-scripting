@@ -1,5 +1,6 @@
 #!/bin/bash
 
+user_id=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -19,15 +20,48 @@ log(){
     echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1" | tee -a "$logs_folder"
 }
 
+if [ $user_id -ne 0 ]; then
+    log "$R You need sudo access to run this $Y command.$N"
+    exit 1
+fi
+
 if [ $args -lt 2 ]; then
     log "$R You should pass <SOURCE> and <DESTINATION>.$N"
+    exit 1
 fi
 
 if [ ! -d $SOURCE_PATH ]; then
     log "$R Source path does not exist.$N"
+    exit 1
 
 elif [ ! -d $DES_PATH ]; then
     log "$R Destination path does not exist.$N"
+    exit 1
+fi
+
+files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +14)
+
+if [ -n $files_check ]; then
+    files_to_zip=$files_check
+    zip_name="$DES_PATH/$(date +"%Y/%m/%d_%H-%M-%S")-14days-backup.tar.gz"
+    log "zipping files older than $3."
+    tar -zcvp $zip_name $files_to_zip
+    log "Old files zipping successful."
+
+    if [ -f zip_name ]; then
+        log "Files are succesfully archived."
+        while IFS= read -f file;
+        do
+            log "Deleting file ... $file"
+            rm $file
+            log "$file successfully deleted."
+        done <<< $files_check
+    
+    else
+        log "Files are not archived ... $Y Skipping$N"
+    fi
+else
+    log "All files are up to date ... $B Skipping$N"
 fi
 
 
