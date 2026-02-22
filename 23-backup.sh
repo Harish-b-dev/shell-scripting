@@ -42,7 +42,7 @@ fi
 log "Backup started"
 log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
-log "Days: $DAYS"
+log "Days: $old_logs"
 
 files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
 
