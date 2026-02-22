@@ -24,7 +24,7 @@ logs_to_delete=$(find "$checking_folder" -type f -mtime +14)
 while IFS= read -r file;
 do
     echo -e "deleting file$Y $file $N" | tee -a $log_file
-    rm $file
+    rm "$file"
     echo -e "file $R $file $N deletion successful." | tee -a $log_file
 
 done <<< $logs_to_delete
