@@ -52,14 +52,14 @@ else
     tar -zcvp $zip_name $(find $SOURCE_PATH -name "*.log" -type f -mtime +14)
     log "Old files zipping successful."
 
-    if [ -f $zip_name ]; then
+    if [ -f "$zip_name" ]; then
         log "Files are succesfully archived."
         while IFS= read -f file;
         do
             log "Deleting file ... $file"
-            rm $file
+            rm "$file"
             log "$file successfully deleted."
-        done <<< $files_check
+        done <<< "$files_check"
     
     else
         log "Files are not archived ... $Y Skipping$N"
