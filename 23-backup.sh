@@ -39,6 +39,11 @@ elif [ ! -d $DES_PATH ]; then
     exit 1
 fi
 
+log "Backup started"
+log "Source Directory: $SOURCE_DIR"
+log "Destination Directory: $DEST_DIR"
+log "Days: $DAYS"
+
 files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
 
 if [ -n "$files_check" ]; then
