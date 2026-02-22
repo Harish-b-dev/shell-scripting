@@ -47,14 +47,14 @@ if [ -z $files_check ]; then
 else
     
     files_to_zip=$files_check
-    zip_name="$DES_PATH/$(date +"%Y/%m/%d_%H-%M-%S")-14days-backup.tar.gz"
+    zip_name="$DES_PATH/$(date +"%Y%m%d_%H-%M-%S")-14days-backup.tar.gz"
     log "zipping files older than $3."
-    tar -zcvp $zip_name $(find $SOURCE_PATH -name "*.log" -type f -mtime +14)
+    tar -zcvpf "$zip_name" $(find $SOURCE_PATH -name "*.log" -type f -mtime +14)
     log "Old files zipping successful."
 
     if [ -f "$zip_name" ]; then
         log "Files are succesfully archived."
-        while IFS= read -f file;
+        while IFS= read -r file;
         do
             log "Deleting file ... $file"
             rm "$file"
