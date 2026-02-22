@@ -39,13 +39,17 @@ elif [ ! -d $DES_PATH ]; then
     exit 1
 fi
 
-files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime "$old_logs")
+files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
 
-if [ ! -n "$files_check" ]; then
+if [ -z $files_check ]; then
+    log "All files are up to date ... $B Skipping$N"
+
+else
+    
     files_to_zip=$files_check
-    zip_name="$DES_PATH/$(date +"%Y%m%d_%H%M%S")-14days-backup.tar.gz"
-    log "zipping files older than $old_logs."
-    tar -zcvpf $zip_name "${files[@]}"
+    zip_name="$DES_PATH/$(date +"%Y%m%d_%H-%M-%S")-14days-backup.tar.gz"
+    log "zipping files older than $3."
+    tar -zcvpf "$zip_name" $(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
     log "Old files zipping successful."
 
     if [ -f "$zip_name" ]; then
@@ -60,8 +64,6 @@ if [ ! -n "$files_check" ]; then
     else
         log "Files are not archived ... $Y Skipping$N"
     fi
-else
-    log "All files are up to date ... $B Skipping$N"
 fi
 
 
