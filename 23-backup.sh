@@ -40,8 +40,8 @@ elif [ ! -d $DES_PATH ]; then
 fi
 
 log "Backup started"
-log "Source Directory: $SOURCE_DIR"
-log "Destination Directory: $DEST_DIR"
+log "Source Directory: $SOURCE_PATH"
+log "Destination Directory: $DES_PATH"
 log "Days: $old_logs"
 
 files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
