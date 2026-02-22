@@ -41,7 +41,7 @@ fi
 
 files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
 
-if [ -n $files_check ]; then
+if [ -n "$files_check" ]; then
     
     files_to_zip=$files_check
     zip_name="$DES_PATH/$(date +"%Y%m%d_%H-%M-%S")-14days-backup.tar.gz"
