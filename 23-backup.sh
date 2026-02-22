@@ -12,7 +12,7 @@ logs_folder="$folder/backup.log"
 mkdir -p "$folder"
 
 log(){
-    echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1" | tee -a "$logs_folder"
+    echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1" #| tee -a "$logs_folder"
 }
 
 log "printing"
