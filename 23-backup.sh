@@ -15,6 +15,6 @@ log(){
     echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1" | tee -a $logs_folder
 }
 
-log printing
+log "printing"
 
 
