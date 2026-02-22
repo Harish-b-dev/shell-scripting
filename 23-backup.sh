@@ -48,7 +48,7 @@ if [ -n $files_check ]; then
     tar -zcvp $zip_name $files_to_zip
     log "Old files zipping successful."
 
-    if [ -f zip_name ]; then
+    if [ -f $zip_name ]; then
         log "Files are succesfully archived."
         while IFS= read -f file;
         do
