@@ -8,8 +8,7 @@ N="\e[0m"
 
 folder="/home/ec2-user"
 logs_folder="$folder/deletions"
-log_file="$logs_folder/$0.log"
-touch $log_file
+log_file="$logs_folder/deletion.log"
 
 sudo mkdir -p $logs_folder
 
