@@ -9,7 +9,7 @@ N="\e[0m"
 folder="/var/log/shell-script"
 logs_folder="$folder/backup.log"
 
-sudo mkdir -p $folder
+sudo mkdir -p "$folder"
 
 log(){
     echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1" | tee -a $logs_folder
