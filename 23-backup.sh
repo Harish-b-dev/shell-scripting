@@ -41,7 +41,11 @@ fi
 
 files_check=$(find $SOURCE_PATH -name "*.log" -type f -mtime +14)
 
-if [ -n $files_check ]; then
+if [ -z $files_check ]; then
+    log "All files are up to date ... $B Skipping$N"
+
+else
+    
     files_to_zip=$files_check
     zip_name="$DES_PATH/$(date +"%Y/%m/%d_%H-%M-%S")-14days-backup.tar.gz"
     log "zipping files older than $3."
@@ -60,8 +64,6 @@ if [ -n $files_check ]; then
     else
         log "Files are not archived ... $Y Skipping$N"
     fi
-else
-    log "All files are up to date ... $B Skipping$N"
 fi
 
 
