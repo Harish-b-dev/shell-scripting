@@ -23,11 +23,11 @@ do
     disk_name=$(echo "$line" | awk -F ' ' '{print $7}' | cut -d '%' -f1)
 
     if [ $disk_usage -ge $alert_usage1 ] && [ $disk_usage -lt $alert_usage2 ]; then
-        low_disk+=${log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N}"}
+        low_disk+="$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N}"
         
     
     elif [ $disk_usage -ge $alert_usage2 ]; then
-        high_disk+=$(log "$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}\n")
+        high_disk+="$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}"
         
     fi
 done <<< "$disk"
