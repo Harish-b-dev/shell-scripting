@@ -10,7 +10,6 @@ disk=$(df -hT | grep -v Filesystem)
 alert_usage1=3
 alert_usage2=20
 private_IP=$(hostname -I)
-sub="HIGH DISK USAGE ALERT ON $private_IP"
 
 low_disk=""
 high_disk=""
@@ -37,4 +36,4 @@ done <<< "$disk"
 #echo -e "$low_disk"
 #echo -e "$high_disk"
 
-sh mail.sh harishboppana4487@gmail.com $sub "DevOps Team" $private_IP $low_disk $high_disk
+sh mail.sh harishboppana4487@gmail.com "HIGH DISK USAGE ALERT ON $private_IP" "DevOps Team" $private_IP $low_disk $high_disk
