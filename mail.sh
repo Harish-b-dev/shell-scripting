@@ -21,6 +21,3 @@ echo "Content-Type: text/html"
 echo ""
 echo "$mail_body"
 } | msmtp "$To_mail"
-
-
-
