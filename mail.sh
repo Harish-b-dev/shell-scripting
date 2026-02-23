@@ -1,4 +1,4 @@
-#!/bin/shell
+#!/bin/bash
 
 To_Mail=$1
 sub=$2
