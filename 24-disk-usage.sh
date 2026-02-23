@@ -10,7 +10,7 @@ disk=$(df -hT | grep -v Filesystem)
 alert_usage1=3
 alert_usage2=20
 private_IP=$(hostname -I)
-sub="HIGH DISK USAGE ON $private_IP"
+sub="HIGH DISK USAGE ALERT ON $private_IP"
 
 low_disk=""
 high_disk=""
