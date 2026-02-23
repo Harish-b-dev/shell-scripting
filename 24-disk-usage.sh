@@ -16,8 +16,8 @@ log(){
 
 while IFS= read -r line;
 do
-    disk_usage=$($line | awk -F ' ' '{print $6}' |cut -d '%' -f1 | grep -vi use)
-    disk_name=$($line | awk -F ' ' '{print $1}' |cut -d '%' -f1 | grep -vi filesystem)
+    disk_usage=$("$line" | awk -F ' ' '{print $6}' |cut -d '%' -f1 | grep -vi use)
+    disk_name=$("$line" | awk -F ' ' '{print $1}' |cut -d '%' -f1 | grep -vi filesystem)
 
     if [ "$disk_usage" >= "$alert_usage1" && "$disk_usage" < "$alert_usage2" ]; then
         log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${$G}$disk_name.$N"
