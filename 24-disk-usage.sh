@@ -22,7 +22,7 @@ do
     if [ "$disk_usage" >= "$alert_usage1" && "$disk_usage" < "$alert_usage2" ]; then
         log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${$G}$disk_name.$N"
     
-    elif [ "$disk_usage" >= "$alert_usage2" ]; then
+    elif [ $disk_usage >= $alert_usage2 ]; then
         log "$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${$Y}$disk_name.$N"
     fi
 done <<< "$disk"
