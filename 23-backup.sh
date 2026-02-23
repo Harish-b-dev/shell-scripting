@@ -50,7 +50,7 @@ if [ -n "$files_check" ]; then
     
     files_to_zip=$files_check
     zip_name="$DES_PATH/$(date +"%Y%m%d_%H-%M-%S")-${old_logs}days-backup.tar.gz"
-    log "zipping files older than $3."
+    log "zipping files older than $old_logs."
     tar -zcvpf "$zip_name" $(find $SOURCE_PATH -name "*.log" -type f -mtime +$old_logs)
     log "Old files zipping successful."
 
