@@ -33,3 +33,4 @@ do
 done <<< "$disk"
 
 echo -e "$low_disk"
+echo -e "$high_disk"
