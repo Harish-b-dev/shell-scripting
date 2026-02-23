@@ -9,6 +9,8 @@ N="\e[0m"
 disk=$(df -hT | grep -v Filesystem)
 alert_usage1=3
 alert_usage2=20
+private_IP=$(hostname -I)
+sub="HIGH DISK USAGE ON $private_IP"
 
 low_disk=""
 high_disk=""
@@ -23,14 +25,16 @@ do
     disk_name=$(echo "$line" | awk -F ' ' '{print $7}' | cut -d '%' -f1)
 
     if [ $disk_usage -ge $alert_usage1 ] && [ $disk_usage -lt $alert_usage2 ]; then
-        low_disk+="$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N}\n"
+        low_disk+="$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N} <br/>"
         
     
     elif [ $disk_usage -ge $alert_usage2 ]; then
-        high_disk+="$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}\n"
+        high_disk+="$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N} <br/>"
         
     fi
 done <<< "$disk"
 
 echo -e "$low_disk"
 echo -e "$high_disk"
+
+sh mail.sh harishboppana4487@gmail.com $sub "DevOps Team" $private_IP $low_disk $high_disk
