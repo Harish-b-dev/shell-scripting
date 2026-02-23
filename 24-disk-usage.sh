@@ -19,7 +19,7 @@ do
     disk_usage=$($line | awk -F ' ' '{print $6}' |cut -d '%' -f1 | grep -vi use)
     disk_name=$($line | awk -F ' ' '{print $1}' |cut -d '%' -f1 | grep -vi filesystem)
 
-    if [ ($disk_usage -ge $alert_usage1 && $line -lt $alert_usage2) ]; then
+    if [ $disk_usage -ge $alert_usage1 && $line -lt $alert_usage2 ]; then
         log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${$G}$disk_name.$N"
     
     elif [ $disk_usage -ge $alert_usage2 ]; then
