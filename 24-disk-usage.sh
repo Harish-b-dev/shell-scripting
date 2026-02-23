@@ -10,6 +10,9 @@ disk=$(df -hT | grep -v Filesystem)
 alert_usage1=3
 alert_usage2=20
 
+low_disk=""
+high_disk=""
+
 log(){
     echo -e "$(date +"%Y/%m/%d -- %H-%M-%S") | $1"
 }
@@ -20,9 +23,13 @@ do
     disk_name=$(echo "$line" | awk -F ' ' '{print $7}' | cut -d '%' -f1)
 
     if [ $disk_usage -ge $alert_usage1 ] && [ $disk_usage -lt $alert_usage2 ]; then
-        log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N}"
+        low_disk+=${log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${G}$disk_name.${N}/n"}
+        
     
     elif [ $disk_usage -ge $alert_usage2 ]; then
-        log "$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}"
+        high_disk+=$(log "$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}/n")
+        
     fi
 done <<< "$disk"
+
+echo "$low_disk"
