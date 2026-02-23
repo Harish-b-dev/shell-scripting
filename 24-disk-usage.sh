@@ -27,7 +27,7 @@ do
         
     
     elif [ $disk_usage -ge $alert_usage2 ]; then
-        high_disk+="$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}/n"
+        high_disk+="$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${Y}$disk_name.${N}\n"
         
     fi
 done <<< "$disk"
