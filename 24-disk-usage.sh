@@ -25,4 +25,4 @@ do
     elif [ "$disk_usage" >= "$alert_usage2" ]; then
         log "$R Disk storage utilization is${N} ${B}$disk_usage${N} ${R}for$N ${$Y}$disk_name.$N"
     fi
-done <<< $disk
+done <<< "$disk"
