@@ -6,7 +6,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-disk=$(df -hT)
+disk=$(df -hT | grep -v Filesystem)
 alert_usage1=3
 alert_usage2=20
 
@@ -16,8 +16,8 @@ log(){
 
 while IFS= read -r line;
 do
-    disk_usage=$("$line" | awk -F ' ' '{print $6}' | cut -d '%' -f1 | grep -vi use)
-    disk_name=$("$line" | awk -F ' ' '{print $1}' | cut -d '%' -f1 | grep -vi filesystem)
+    disk_usage=$("$line" | awk -F ' ' '{print $6}' | cut -d '%' -f1)
+    disk_name=$("$line" | awk -F ' ' '{print $7}' | cut -d '%' -f1)
 
     if [ "$disk_usage" >= "$alert_usage1" && "$disk_usage" < "$alert_usage2" ]; then
         log "$Y Disk storage utilization is${N} ${B}$disk_usage${N} ${Y}for$N ${$G}$disk_name.$N"
