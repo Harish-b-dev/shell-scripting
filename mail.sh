@@ -20,7 +20,7 @@ echo "Subject: $sub"
 echo "Content-Type: text/html"
 echo ""
 echo "$mail_body"
-} | msmtp "$to_mail"
+} | msmtp "$To_mail"
 
 
 
