@@ -35,7 +35,7 @@ do
     fi
 done <<< "$disk"
 
-#echo -e "$low_disk"
-#echo -e "$high_disk"
+echo -e "$low_disk"
+echo -e "$high_disk"
 
-sh mail.sh harishboppana4487@gmail.com "HIGH DISK USAGE ALERT ON $private_IP" "DevOps Team" $private_IP $low_disk $high_disk
+#sh mail.sh harishboppana4487@gmail.com "HIGH DISK USAGE ALERT ON $private_IP" "DevOps Team" $private_IP $low_disk $high_disk
