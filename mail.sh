@@ -12,7 +12,7 @@ Alert_type2=$6
 message_body1=$(echo $Alert_type1 | sed -e 's:/:\\:g')
 message_body2=$(echo $Alert_type2 | sed -e 's:/:\\:g')
 
-mail_body=$(sed -e "s/To_Team/$To_Team/g" -e "s/Public_IP/$IP/g" -e "s|MESSAGE1|$message_body1|g" -e "s|MESSAGE2|$message_body2|g" template.html)
+mail_body=$(sed -e "s/To_Team/$To_Team/g" -e "s/Public_IP/$IP/g" -e "s/MESSAGE1/$message_body1/g" -e "s/MESSAGE2/$message_body2/g" template.html)
 
 {
 echo "To: $To_Mail"
